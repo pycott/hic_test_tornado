@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="{{ static_url('js/lib/jquery-3.2.1.min.js') }}"></script>
+    <script src="{{ static_url('js/commons.js') }}"></script>
+    <script src="{{ static_url('js/tornado.js') }}"></script>
+    <script src="{{ static_url('js/upload_form.js') }}"></script>
+    <script src="{{ static_url('js/index.js') }}"></script>
+
+</head>
+<body>
+
+<form id="upload_form" enctype="multipart/form-data" method="post" action="/upload">
+    <input id="input_file" name="file" type="file">
+    {% module xsrf_form_html() %}
+    <input type="submit" value="Upload">
+</form>
+<progress id="upload_progress" value="0"></progress>
+<div id="result"></div>
+</body>
+</html>
